@@ -36,4 +36,9 @@ public class Posts {
     //PK 는 Long type의 auto_increment 를 추천, 주민번호 등은 유니크 키로 사용
     //Entity class는 절대로 Setter Method 사용 X
     //생성자를 통해 최종값을 채우고, DB에 삽입하자 && 값 변경이 필요하면 해당 이벤트에 맞는 public method를 호출하자
+
+    public void update(String title, String content){
+        this.content = content;
+        this.title = title;
+    }
 }

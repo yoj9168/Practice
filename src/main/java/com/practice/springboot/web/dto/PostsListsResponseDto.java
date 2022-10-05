@@ -1,23 +1,23 @@
 package com.practice.springboot.web.dto;
 
 import com.practice.springboot.domain.posts.Posts;
-import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Getter
-public class PostsListResponseDto {
+public class PostsListsResponseDto {
     private Long id;
-    private String author;
     private String title;
-    private LocalDateTime modifiedDate;
+    private String content;
+    private String author;
 
-    public PostsListResponseDto(Posts entity){
+    private LocalDateTime modifiedDate;
+    public PostsListsResponseDto(Posts entity){
         this.id = entity.getId();
-        this.author = entity.getAuthor();
         this.title = entity.getTitle();
+        this.content = entity.getContent();
+        this.author = entity.getAuthor();
         this.modifiedDate = entity.getModifiedDate();
     }
 }

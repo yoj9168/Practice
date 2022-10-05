@@ -3,34 +3,33 @@ package com.practice.springboot.web;
 import com.practice.springboot.service.posts.PostsService;
 import com.practice.springboot.web.dto.PostsResponseDto;
 import com.practice.springboot.web.dto.PostsSaveRequestDto;
-import com.practice.springboot.web.dto.PostsUpdateRequestDto;
+import com.practice.springboot.web.dto.PostsUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
-    private final PostsService postService;
+    private final PostsService postsService;
 
-    @PostMapping("/api/v1/posts")
+    @PostMapping("api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto){
-        return postService.save(requestDto);
+        return postsService.save(requestDto);
     }
 
-    @PutMapping("/api/v1/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto){
-        return postService.update(id, requestDto);
+    @PutMapping("api/v1/posts/{id}")
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateDto updateDto){
+        return postsService.update(id, updateDto);
     }
 
-    @GetMapping("/api/v1/posts/{id}")
+    @GetMapping("api/v1/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id){
-        return postService.findById(id);
+        return postsService.findById(id);
     }
 
-    @DeleteMapping("/api/v1/posts/{id}")
+    @DeleteMapping("api/v1/posts/{id}")
     public Long delete(@PathVariable Long id){
-        postService.delete(id);
+        postsService.delete(id);
         return id;
     }
-
 }

@@ -2,7 +2,6 @@ package com.practice.springboot.web;
 
 import com.practice.springboot.domain.posts.Posts;
 import com.practice.springboot.domain.posts.PostsRepository;
-import com.practice.springboot.web.dto.PostsSaveRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -24,6 +24,7 @@ public class User extends BaseTimeEntity {
     @Column
     private String picture;
 
+    //회원의 상태 (ex) 일반 회원인지, admin인지 등등
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
